@@ -50,13 +50,10 @@ Route::group([
     })->name('home');
 
     Route::resource('/users', 'App\Http\Controllers\UserController');
-    Route::get('/users/ajax', [UserController::class, 'indexAjax'])->name('users.ajax');
     // write route for available-jobs
-    Route::resource('candidates', 'App\Http\Controllers\CandidateController');
-    Route::get('/candidate/ajax', [CandidateController::class, 'indexAjax'])->name('candidates.ajax');
+    Route::resource('/candidates', 'App\Http\Controllers\CandidateController');
 
-    Route::resource('available-jobs', 'App\Http\Controllers\AvailableJobController');
-    Route::get('/available', [AvailableJobController::class, 'indexAjax'])->name('available.index');
+    Route::resource('/available', 'App\Http\Controllers\AvailableJobController');
 
     Route::resource('/jobapply', 'App\Http\Controllers\JobApplyController');
     Route::resource('/interview', 'App\Http\Controllers\InterviewController');

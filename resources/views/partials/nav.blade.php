@@ -10,10 +10,10 @@
                     <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" aria-current="page" href="{{ route('home') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->is('users*') ? 'active' : '' }}" href="{{ route('users.ajax') }}">Users</a>
+                    <a class="nav-link {{ request()->is('users*') ? 'active' : '' }}" href="{{ route('users.index') }}">Users</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->is('candidate*') ? 'active' : '' }}" href="{{ route('candidates.ajax') }}">Candidates </a>
+                    <a class="nav-link {{ request()->is('candidate*') ? 'active' : '' }}" href="{{ route('candidates.index') }}">Candidates </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ request()->is('available*') ? 'active' : '' }}" href="{{ route('available.index') }}">Available Jobs</a>
@@ -22,7 +22,7 @@
                     <a class="nav-link {{ request()->is('jobapply*') ? 'active' : '' }}" href="{{ route('jobapply.index') }}">Jobapply</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->is('interview*') ? 'active' : '' }}" href="{{ route('interview.index') }}">Interview</a></a>
+                    <a class="nav-link {{ request()->is('interview*') && !request()->is('interviewreview*') ? 'active' : '' }}" href="{{ route('interview.index') }}">Interview</a></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ request()->is('interviewreview*') ? 'active' : '' }}" href="{{ route('interviewreview.index') }}">InterviewReview</a></a>

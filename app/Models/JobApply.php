@@ -5,9 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+// use softdelet
+use Illuminate\Database\Eloquent\SoftDeletes;
+
 class JobApply extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
     protected $guarded = [];
 
@@ -18,14 +21,11 @@ class JobApply extends Model
     }
 
     //belongTO relations for id AvailableJob
-    public function availableJob()
+    public function Job()
     {
-        return $this->belongsTo(AvailableJob::class, 'available_job_id');
+        return $this->belongsTo(AvailableJob::class, 'available_job_id')->with('createdBy');
     }
     //hasMany relations for jobcandidate
-    public function jobCandidate()
-    {
-        return $this->hasMany(JobCandidate::class, 'job_apply_id');
-    }
+  
 
 }

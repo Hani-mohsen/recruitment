@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+//use softdelet
+use Illuminate\Database\Eloquent\SoftDeletes;
 class Interview extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
     protected $guarded = [];
 
@@ -20,7 +21,7 @@ class Interview extends Model
     // belongsTo relations for job_apply_id job_apply
     public function jobApply()
     {
-        return $this->belongsTo(JobApply::class, 'job_apply_id');
+        return $this->belongsTo(JobApply::class, 'job_apply_id')->with('Job');
     }
 
     // belongsTo relations for candidate_id Candidate

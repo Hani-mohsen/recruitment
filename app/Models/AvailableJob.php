@@ -5,10 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+// use softdelet
+use Illuminate\Database\Eloquent\SoftDeletes;
+
 class AvailableJob extends Model
 {
-    use HasFactory;
-
+    use HasFactory, SoftDeletes;
+    protected $table = 'available_jobs';
     protected $guarded = [];
 
     // belongsTo relations for created_by user

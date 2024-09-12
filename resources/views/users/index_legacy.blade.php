@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Data candidates </title>
+	<title>DataUsers </title>
 	<meta name="description" content="">
 	<meta name="keywords" content="">
 	<link href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" rel=" stylesheet">
@@ -140,17 +140,11 @@
 					</tr>
 				</thead>
 				<tbody>
-					@foreach ($candidates as $c)
+					@foreach ($users as $user)
                     <tr>
-                        <td>{{ $c->id }}</td>
-                        <td>{{ $c->FirstName }}</td>
-                        <td>{{ $c->LastName }}</td>
-						<td>{{ $c->Email }}</td>
-                        <td>{{ $c->Phone }}</td>
-                        <td>{{ $c->city }}</td>
-                        <td>{{ $c->profile }}</td>
-                        <td>{{ $c->Resume }}</td>
-
+                        <td>{{ $user->id }}</td>
+                        <td>{{ $user->name }}</td>
+                        <td>{{ $user->email }}</td>
                     </tr>
 					@endforeach
 					

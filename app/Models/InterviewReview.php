@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+//use softdelet
+use Illuminate\Database\Eloquent\SoftDeletes;
 class InterviewReview extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
     protected $guarded = [];
     // belongsTo relations for created_by user
